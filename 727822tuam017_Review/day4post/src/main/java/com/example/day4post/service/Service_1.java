@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.day4post.model.User;
 import com.example.day4post.repository.Repository;
 @Service
-public class Service_1 
+public class Service_1
 {
     @Autowired
     public Repository ab;
@@ -46,8 +46,9 @@ public class Service_1
     {
         return ab.findByEmail(email)
         .map(existingUser -> {
-        existingUser.setName(user.getName());
+        existingUser.setEmployeename(user.getEmployeename());
         existingUser.setEmail(user.getEmail());
+        
         return ab.save(existingUser);
 
         }
